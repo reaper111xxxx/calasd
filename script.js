@@ -31,17 +31,14 @@ const gifs =
 
 const gifElement = document.getElementById("catpic");
 
-const two = 2
+
 noButton.addEventListener("click" , function(){
     console.log("No");
     if(noClicks<maxNo) {
         gifElement.src = gifs[noClicks];
     }
 
-    
-    if(two > 1){
-        noButton.textContent = buttonMessages[noClicks % maxNo];
-    }
+    noButton.textContent = buttonMessages[noClicks % maxNo];
 
     noButton.style.width = "auto";
     noButton.style.width = `${noButton.scrollWidth}px`;
@@ -57,14 +54,14 @@ noButton.addEventListener("click" , function(){
     console.log(`Scaled Width: ${scaledWidth}, Max Width: ${maxYesWidth}`);
 
     if (scaledWidth < maxYesWidth) {
-        yesScale += 0.5; 
+        yesScale += 0.5; // Increment scale by a smaller step
         yesButton.style.transform = `scale(${yesScale})`;
 
-        
+        // Get the current gap scale factor from CSS
         const rootStyles = getComputedStyle(document.documentElement);
         const gapScaleFactor = parseFloat(rootStyles.getPropertyValue("--gap-scale-factor")) || 250;
 
-        
+        // Adjust the gap dynamically
         const currentGap = parseFloat(buttonContainer.style.gap) || 20;
         const newGap = Math.sqrt(currentGap * gapScaleFactor); // Scale based on the factor
         buttonContainer.style.gap = `${newGap}px`;
