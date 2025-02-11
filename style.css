@@ -1,0 +1,163 @@
+:root {
+    --gap-scale-factor: 250;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin: 0;
+    padding: 75px 0;
+    background: linear-gradient(#D6A3A3 ,#E6C79C);
+}
+
+    @font-face {
+    font-family: "Steph";
+    src: url("assets/fonts/steph-font.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Steph";
+    src: url("assets/fonts/steph-font-bold.ttf");
+    font-weight: bold;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 20px auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}
+
+button {
+    border-radius: 8px;
+    min-width: 100px;
+    max-width: 550px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: transform 0.1s ease;
+}
+
+button:hover {
+    scale: 1.05;
+}
+
+#yesButton {
+    transform-origin: center top;
+    color: white;
+    background-color: #57915e;
+}
+
+#noButton {
+    color: white;
+    background-color: #db4e4e;
+}
+
+/* Responsive for medium screens */
+@media (max-width: 1150px) {
+    :root {
+        --gap-scale-factor: 200;
+    }
+
+    body {
+        padding-top: 70px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #thebeardancing {
+        width: 380px;
+        height: 304px;
+        object-fit: cover;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: lighter;
+        color : lightcoral;
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px; 
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    }
+
+    .buttons {
+        gap: 20px;
+    }
+
+    button {
+        min-width: 100px;
+        max-width: 400px;
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+    :root {
+        --gap-scale-factor: 50;
+    }
+
+    body {
+        padding-top: 100px;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    #thebeardancing {
+        width: 300px;
+        height: 240px;
+        object-fit: cover;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        min-width: 60px;
+        max-width: 175px;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+}
